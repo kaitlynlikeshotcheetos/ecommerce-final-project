@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer</title>
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/new-super-mario-font-u">
+  <link rel="stylesheet" type="text/css" href="/customer.css">
+</head>
+<body>
+  <header class="header">
+      <h1 class="title"><a class="titletext" id="home-link" href="/">Home</a></h1>
+      <nav class="navigation">
+        <ul>
+          <li><a href="/showCart">Cart</a></li>
+          <li><a href="/customer">Customer</a></li>
+          <li><a href="/logout">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+  <div class="main-content">
+    <p><strong>Username:</strong> <%= user.username %></p>
+      
+    <h2><%= user.username %> Purchase History</h2>
+    <% if (user.purchases && user.purchases.items && user.purchases.items.length > 0) { %>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% user.purchases.items.forEach(item => { %>
+            <tr>
+              <td><%= item.productId ? item.productId.name : 'Product Not Found' %></td>
+              <td>$<%= item.price.toFixed(2) %></td>
+              <td><%= item.quantity %></td>
+              <td>$<%= (item.price * item.quantity).toFixed(2) %></td>
+            </tr>
+          <% }); %>
+            <tr><td><hr></td></tr>
+            <tr>
+              <td><strong>Total Spent</strong></td>
+              <td>$<%= user.purchases.totalPrice.toFixed(2) %></td>
+            </tr>
+            <tr>
+              <td><strong>Total Purchases</strong></td>
+              <td><%= user.purchases.totalQuantity %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <% } else { %>
+      <p>Your purchase history is empty.</p>
+    <% } %>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

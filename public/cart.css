@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #444 25%, #000 25%, #000 50%, #444 50%, #444 75%, #000 75%, #000 100%);
+  background-size: 80px 80px;
+  color: white; 
+}
+
+.header {
+  background: linear-gradient(135deg, #333 0%, #666 100%);
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titletext {
+  font-size: 24px;
+  color: #fff; 
+  text-decoration: none;
+}
+
+.titletext:hover {
+  color: #b4d1cb;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.navigation ul li:first-child {
+  margin-left: 0;
+}
+
+.navigation ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+  color: #b4d1cb;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.cart-items {
+  width: 80%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  color: white; 
+}
+
+.table th {
+  background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+  color: white; /* Adjusted text color to white for better visibility */
+}
+
+.text-right {
+  text-align: right;
+}
+
+.table th:nth-child(2), .table td:nth-child(2) {
+  width: 250px; 
+  padding: 5px; 
+}
+
+.product-image {
+  max-width: 250px; 
+  height: auto;
+  display: block;
+  margin: 0 auto; 
+}
+
+.button-container {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.button-container form {
+  display: inline-block;
+}
+
+.button-container form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.button-container form input[type="submit"]:hover {
+  background-color: #555;
+}
+
+
+.button-container form input[type="submit"].purchase-button {
+  background-color: #4CAF50; /* Green color */
+}
+
+
+.button-container form input[type="submit"].empty-cart-button {
+  background-color: #f44336; /* Red color */
+}
+
+.delete-button {
+  background-color: #dc3545; /* Red color */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Darker shade of red on hover */
+}
+
+.flash-message {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  padding-top: 20px; 
+}

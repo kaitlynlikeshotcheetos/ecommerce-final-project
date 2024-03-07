@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/new-super-mario-font-u">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+      <h1 class="title"><a class="titletext" id="home-link" href="/">Home</a></h1>
+      <nav class="navigation">
+        <ul>
+          <li><a href="/showCart">Cart</a></li>
+          <li><a href="/customer">Customer</a></li>
+          <li><a href="/logout">Log Out</a></li>
+        </ul>
+      </nav>
+  </header>
+  
+
+  <div class="main-content">
+    <div class="sort-dropdown">
+      <label for="sortSelect">Sort by:</label>
+      <select id="sortSelect">
+        <option value="name">A-Z</option>
+        <option value="price">Price</option>
+        <option value="stock">Stock</option>
+      </select>
+    </div>
+
+
+    <% if (success_messages && success_messages.length > 0) { %>
+        <div class="flash-message success">
+            <% success_messages.forEach(message => { %>
+                <p><%= message %></p>
+            <% }); %>
+        </div>
+    <% } %>
+    <% if (error_messages && error_messages.length > 0) { %>
+        <div class="flash-message error">
+            <% error_messages.forEach(message => { %>
+                <p><%= message %></p>
+            <% }); %>
+        </div>
+    <% } %>
+    <div class="products">
+      <h2 id="producttitle">Products</h2>
+      <input type="text" id="searchInput" name="searchInput" placeholder="Search by name...">
+      <div id="productsList" class="product-container"></div>
+    </div>
+  </div>
+  <script src="/script.js">
+  </script>
+</body>
+</html>
