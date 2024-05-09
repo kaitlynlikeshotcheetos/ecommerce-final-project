@@ -1,6 +1,8 @@
 import Customer from '../models/Customer.js';
+
 import Product from '../models/Product.js';
 
+//edit accordingly
 export const home = async (req, res) => {
   try {
     let customer = await Customer.findById(req.user._id);
@@ -21,6 +23,7 @@ export const home = async (req, res) => {
   }
 };
 
+//change to get score info
 export const getProducts = async (req, res) => {
   const { name, sortBy } = req.body;
   let query = {};
@@ -47,6 +50,7 @@ export const getProducts = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
 
 
 export const homename = async (req, res) => {
@@ -239,4 +243,5 @@ export const customer = async (req, res) => {
     res.status(500).send('An error occurred');
   }
 }
+
 

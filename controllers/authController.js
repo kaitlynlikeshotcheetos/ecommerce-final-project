@@ -1,4 +1,4 @@
-import Customer from '../Models/Customer.js';
+import Customer from '../models/Customer.js';
 import passport from 'passport';
 
 export const login = (req, res) => {

@@ -11,6 +11,8 @@ router.post('/register', auth.verifyRegister);
 router.get('/logout', auth.logout);
 
 router.get('/', auth.isAuthenticated, ctrl.home);
+
+
 router.post('/api/products', auth.isAuthenticated, ctrl.getProducts);
 router.get('/showCart', auth.isAuthenticated, ctrl.showCart);
 router.post('/addToCart', auth.isAuthenticated, ctrl.addToCart);
